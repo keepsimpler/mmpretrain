@@ -7,6 +7,7 @@ from .convnext import ConvNeXt
 from .cspnet import CSPDarkNet, CSPNet, CSPResNet, CSPResNeXt
 from .davit import DaViT
 from .deit import DistilledVisionTransformer
+from .edit import DecoderVisionTransformer
 from .deit3 import DeiT3
 from .densenet import DenseNet
 from .edgenext import EdgeNeXt
@@ -85,6 +86,7 @@ __all__ = [
     'Conformer',
     'MlpMixer',
     'DistilledVisionTransformer',
+    'DecoderVisionTransformer',
     'PCPVT',
     'SVT',
     'EfficientNet',
