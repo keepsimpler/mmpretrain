@@ -241,7 +241,7 @@ class VisionTransformer(BaseBackbone):
                 'feedforward_channels': 6144
             }),
     }
-    num_extra_tokens = 1  # class token
+    # num_extra_tokens = 1  # class token
     OUT_TYPES = {'raw', 'cls_token', 'featmap', 'avg_featmap'}
 
     def __init__(self,
@@ -257,6 +257,7 @@ class VisionTransformer(BaseBackbone):
                  final_norm=True,
                  out_type='cls_token',
                  with_cls_token=True,
+                 num_extra_tokens=1,
                  frozen_stages=-1,
                  interpolate_mode='bicubic',
                  layer_scale_init_value=0.,
@@ -306,8 +307,9 @@ class VisionTransformer(BaseBackbone):
 
         # Set cls token
         self.with_cls_token = with_cls_token
+        self.num_extra_tokens = num_extra_tokens
         if with_cls_token:
-            self.cls_token = nn.Parameter(torch.zeros(1, 1, self.embed_dims))
+            self.cls_token = nn.Parameter(torch.zeros(1, self.num_extra_tokens, self.embed_dims))
         elif out_type != 'cls_token':
             self.cls_token = None
             self.num_extra_tokens = 0
