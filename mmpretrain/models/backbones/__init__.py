@@ -57,6 +57,7 @@ from .van import VAN
 from .vgg import VGG
 from .vig import PyramidVig, Vig
 from .vision_transformer import VisionTransformer
+from .vision_transformer_softmax import VisionTransformerSoftmax
 from .vit_eva02 import ViTEVA02
 from .vit_sam import ViTSAM
 from .xcit import XCiT
@@ -78,6 +79,7 @@ __all__ = [
     'MobileNetV2',
     'MobileNetV3',
     'VisionTransformer',
+    'VisionTransformerSoftmax',
     'SwinTransformer',
     'TNT',
     'TIMMBackbone',
